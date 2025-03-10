@@ -26,3 +26,8 @@ jobs:
           restore-keys: ${{ runner.os }}-m2
       - name: Build
         run: mvn -B verify
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: CoreProtect-JAR
+          path: target/*.jar
